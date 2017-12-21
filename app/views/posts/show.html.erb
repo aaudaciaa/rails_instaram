@@ -1,0 +1,7 @@
+<h1>글보기</h1>
+<p>제목 : <%= @post.title %> / 내용 : <%= @post.content %></p>
+<img src="<%= @post.avatar %>"></p>
+<a href="/posts/edit/<%= @post.id %>">수정</a>
+<a data-confirm="진짜 삭제하실거에요?" href="/posts/destroy/<%= @post.id %>">삭제</a> <!-- a태그는 default값이 get이다. post로 바꾸기 위해서는 data-method="post"를 추가해줘야한다. -->
+
+<!-- <%= link_to "[삭제]", "/posts/destroy/#{@post.id}", data: { method: "post", confirm: "진짜 삭제하실거에요?" } %> -->

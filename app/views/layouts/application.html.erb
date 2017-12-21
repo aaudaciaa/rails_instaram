@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsInsta</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= link_to "Instagram", root_path %> <!-- <a href="/">Instagram</a>, <%= link_to "Instagram", "/" %> 도 됨. -->
+  <%= link_to "로그인", "/users/login" %>
+  <%= link_to "회원가입", "/users/signup" %>
+  <%= link_to "로그아웃", "/users/logout" %>
+
+  <!-- <a href="/posts/new">새글쓰기</a>
+  <a href="/users/login">로그인</a>
+  <a href="/users/logout">로그아웃</a>
+  <a href="/users/signup">회원가입</a> -->
+
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %><p>
+  <% elsif flash[:alert] %>
+    <p><%= flash[:alert] %><p>
+  <% end %>
+
+  <%= yield %>
+
+</body>
+</html>

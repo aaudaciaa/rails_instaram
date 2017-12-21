@@ -1,0 +1,10 @@
+<h1>인스타그램</h1>
+<p>사진을 올려주세요<p>
+<%= link_to "새 사진올리기", "/posts/new" %>
+
+<% @posts.each do |post| %>
+  <p>
+    <!-- 제목 : <%= post.title %> / 내용 : <%= post.content %> -->
+    <%= link_to "#{post.title}", "/posts/show/#{post.id}" %>
+  <p>
+<% end %>
